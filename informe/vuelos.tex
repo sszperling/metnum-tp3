@@ -12,15 +12,28 @@ Una observación al respecto de este gráfico es que en todos los años, febrero
 
 \subsection{Datos concretos y estimaciones}
 
-Para realizar los gráficos se acumuló por cada mes de cada año la cantidad de vuelos sucedidos.
+Para realizar los gráficos se acumuló por cada mes de cada año la cantidad de vuelos sucedidos. La función utilizada con CML para esta estimación fue:
 
-Uno de los experimentos realizados fue variar los años de entrenamiento y estimar los siguientes años:
-
-Los errores cuadráticos medios para estas estimaciones fueron 365916.778 (izquierda), y 251920.254 (derecha). La función utilizada con CML para esta estimación fue:
-
-\bigskip
+\smallskip
 
 $y(x) = ax + b|cos(x)| + c|sin(x)| + d \times log(x+1) + e + f \times cos(x) + g \times sin(x) + hx^4 + ix^3 + jx^2$
+
+Uno de los experimentos realizados fue variar los años de entrenamiento y estimar los siguientes años. Se comparó un conjunto entrenado con un año extra que el resto para comprobar si la diferencia en la precisión era sustancial o no. La hipótesis es que al haber entrenado con una mayor cantidad de datos, es posible dar una mejor predicción de los siguientes años, pero podría ser posible que esto no ocurriese así sino que durante ese año extra la disposición de los datos sea muy particular y que se produzca el fenómeno de overfitting, resultando en una predicción de menor calidad.
+
+Estos son los resultados de entrenar a la función entre los años 2003 y 2006, prediciendo de 2006 a 2008.
+
+\includegraphics[scale=0.9,natwidth=732,natheight=415]{vuelos_3-6_7-8.png}
+
+El error cuadrático medio para estas estimaciones fue de 840810926.93.
+
+Luego se experimentó tomando distintos rangos de entrenamiento: 2003-2005, 2004-2006 y 2005-2007, prediciendo 2005-2006, 2006-2007 y 2007-2008, respectivamente.
+
+\includegraphics[scale=0.9,natwidth=732,natheight=415]{vuelos_multiples.png}
+
+Los EMC fueron 11228017738.2, 1215421229.42, 1214577235.23, según el orden en que los rangos están dispuestos.
+
+Como puede observarse, el EMC para la función entrenada desde 2003 a 2006 es mucho menor que el resto, y esto se cree que se debe a ese año extra que tiene de entrenamiento.
+
 
 \subsection{ECM de funciones de predicción}
 

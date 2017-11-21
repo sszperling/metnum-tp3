@@ -1,0 +1,45 @@
+\section{Demoras por mes y distancia}
+
+Decidimos analizar cómo se relacionan las demoras y la distancia del vuelo. Estas demoras tienen distintas causas, prestamos atención a las que están representadas en los dato, quedándonos con las siguientes tipos de demora:
+\begin{itemize}
+\item Aerolínea (problemas de mantención del avión, o de los empleados)
+\item Mal clima
+\item NAS(National Aviation System, demoras causadas por operaciones del aeropuerto, tráfico voluminoso y/o control del tráfico aéreo)
+\item Avión retrasado (demora por un vuelo anterior llegando tarde, causando que el vuelo presente salga más tarde)
+\item Seguridad
+\end{itemize}
+
+\subsection{Primeras hipótesis y bases del análisis}
+
+Nuestra hipótesis respecto a este eje es que la causas de demoras afectan a los tipos de vuelo por igual, ya que las causas anteriormente nombradas no parecerían tener algún tipo de relación con la distancia del vuelo.
+
+Para estos experimentos utilizamos los datos entre los años 2003-2008 (no hay información para años previos). 
+
+%-Grafico 1
+
+Podemos ver como la cantidad de vuelos según tipo es bastante similar, y escala muy parecido en el tiempo, salvo los vuelos cortos que sufre una caída más notoria a partir del 2008.
+
+%-Grafico 2
+
+En este segundo gráfico notamos, primero que el porcentaje es muy similar para las 3 categorías, hay menos vuelos retrasos en vuelos cortos, posiblemente debido a que necesitan una menor preparación, aunque no es una diferencia significativa. Y otra dato que extrajimos de este gráfico es que las demoras son estacionarias, y tienen una frecuencia bastante regular ya que podemos notar que los altibajos se producen en las mismas épocas del años para los distintos tipos. Por esto prestaremos atención al estimar a los senos y cosenos.
+
+
+\subsection{Datos concretos y estimaciones}
+
+Primero queríamos ver cómo responden las estimaciones, así que siguiendo el approach anterior, estimamos el porcentaje de demoras para vuelos medianos, tratando de estimar 2006, 2007 y 2008, para cada año tomamos los dos años anteriores
+
+%Grafico 3 y 4
+
+Los errores cuadráticos medios para estas estimaciones fueron 0.001143 (izquierda), y 0.001758 (derecha). La función utilizada con CML para esta estimación fue:
+
+\bigskip
+
+$f(x) = a + bx +c cos(x*d+e) + f * sin(x*g+h) + i$
+
+La intuición que tuvimos para encontrar la función fue usar cosenos y senos por la frecuencia y amplitud de los datos.
+
+Este otro experimento consistió en reutilizar los parámetros obtenidos por el método en el tipo de vuelo anterior y tratar de estimar el porcentaje de demoras para vuelos largos. 
+
+%Grafico 5
+
+Como se puede observar la predicción se comporta bastante parecida a los datos reales, esta se acopla muy bien a la frecuencia, pero en el 2007 se puede observar una amplitud de los datos más pequeña que los años anteriores y ahí es donde más falló la estimación.
