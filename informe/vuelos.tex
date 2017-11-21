@@ -1,0 +1,23 @@
+\section{Vuelos por mes}
+
+Para el primer análisis se decidió observar la cantidad de vuelos por mes entre los años 2003 y 2008. En el caso de lograr una predicción ajustada, esta información podría ser utilizada para calcular insumos necesarios en los próximos años dependiendo de la cantidad de vuelos que se realizarán.
+
+\subsection{Primeras hipótesis y bases del análisis}
+
+Nuestra hipótesis respecto de este eje es que la cantidad de vuelos de cada aeropuerto debería aumentar a lo largo de los años dado que el tráfico áereo aumenta a la par. Los experimentos comprenden a todos los aeropuertos.
+
+Consideramos los datos a partir del año 2003 debido al incidente de 2001 previamente mencionado.
+
+Una observación al respecto de este gráfico es que en todos los años, febrero tiene un pico bajo de vuelos. No pudimos encontrar la razón por la cual sucede esto, lo único que pudimos observar es que esa fecha coincide con el intervalo de clases entre dos períodos de vacaciones: el president’s day y spring break.
+
+\subsection{Datos concretos y estimaciones}
+
+Para realizar los gráficos acumulamos por cada mes de cada año la cantidad de vuelos sucedidos.
+
+Uno de los experimentos realizados fue variar los años de entrenamiento y estimar los siguientes años:
+
+Los errores cuadráticos medios para estas estimaciones fueron 365916.778 (izquierda), y 251920.254 (derecha). La función utilizada con CML para esta estimación fue:
+
+\bigskip
+
+$y(x) = ax + b|cos(x)| + c|sin(x)| + d \times log(x+1) + e + f \times cos(x) + g \times sin(x) + hx^4 + ix^3 + jx^2$

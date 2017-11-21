@@ -43,6 +43,8 @@ build/
 *.pdf
 *.toc
 *.synctex.gz
+*.ps
+*.dvi
 
 CMakeCache.txt
 CMakeFiles
