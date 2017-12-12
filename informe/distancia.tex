@@ -1,6 +1,6 @@
 \section{Demoras por mes y distancia}
 
-Decidimos analizar cómo se relacionan las demoras y la distancia del vuelo. Estas demoras tienen distintas causas, prestamos atención a las que están representadas en los dato, quedándonos con las siguientes tipos de demora:
+Se decidió analizar cómo se relacionan las demoras y la distancia del vuelo. Estas demoras tienen distintas causas, por lo que se prestó atención solamente a los siguientes tipos:
 \begin{itemize}
 \item Aerolínea (problemas de mantención del avión, o de los empleados)
 \item Mal clima
@@ -11,70 +11,69 @@ Decidimos analizar cómo se relacionan las demoras y la distancia del vuelo. Est
 
 \subsection{Primeras hipótesis y bases del análisis}
 
-Nuestra hipótesis respecto a este eje es que las causas de demoras afectan a los tipos de vuelo por igual, ya que las causas anteriormente nombradas no parecerían tener algún tipo de relación con la distancia del vuelo.
+La hipótesis que se planteó respecto a este eje es que las causas de demoras afectan a los tipos de vuelo por igual, ya que las causas anteriormente nombradas no parecerían tener algún tipo de relación con la distancia del vuelo.
 
-Para estos experimentos utilizamos los datos entre los años 2003-2008 (no hay información para años previos).
+Para estos experimentos se utilizaron los datos entre los años 2003-2008 debido a que no se obtuvo información para años previos.
+
+La figura 4 muestra la cantidad de vuelos por tipo, en la cual se observa que tanto los de corta, como mediana y larga distancia tienen una frecuencia similar y que escalan muy parecido en el tiempo.
 
 %-Grafico 1
 \begin{figure}[!htb]
 \begin{center}
-\includegraphics[scale=0.9,natwidth=732,natheight=100]{distancia1.png}
-\caption{caption}
-\label{label}
+\includegraphics[scale=0.7,natwidth=732,natheight=100]{distancia1.png}
+\caption{Cantidad de vuelos por distancia}
+\label{distancia-1}
 \end{center}
 \end{figure}
 
-Podemos ver como la cantidad de vuelos según tipo es bastante similar, y escala muy parecido en el tiempo, salvo los vuelos cortos que sufre una caída más notoria a partir del 2008.
+En la figura 5 se notó, primero que el porcentaje es muy similar para las 3 categorías. Hay menos retrasos en vuelos cortos, posiblemente debido a que necesitan una menor preparación, aunque no es una diferencia significativa. Otro dato que se extrajo de este gráfico es que las demoras son estacionarias, y tienen una frecuencia bastante regular ya que puede notarse que los altibajos se producen en las mismas épocas del año para los distintos tipos. Por esto se presta atención al estimar a los senos y cosenos.
 
-%-Grafico 2
+% -Grafico 2
 \begin{figure}[!htb]
 \begin{center}
-\includegraphics[scale=0.9,natwidth=732,natheight=100]{distancia2.png}
-\caption{caption}
-\label{label}
+\includegraphics[scale=0.7,natwidth=732,natheight=100]{distancia2.png}
+\caption{Porcentaje de vuelos demorados por distancia}
+\label{distancia-2}
 \end{center}
 \end{figure}
 
-En este segundo gráfico se notó, primero que el porcentaje es muy similar para las 3 categorías, hay menos retrasos en vuelos cortos, posiblemente debido a que necesitan una menor preparación, aunque no es una diferencia significativa. Otro dato que extraídos de este gráfico es que las demoras son estacionarias, y tienen una frecuencia bastante regular ya que puede notarse que los altibajos se producen en las mismas épocas del año para los distintos tipos. Por esto se presta atención al estimar a los senos y cosenos.
 
 
 \subsection{Datos concretos y estimaciones}
 
-Primero quería verse cómo responden las estimaciones, así que siguiendo el approach anterior, se estimó el porcentaje de demoras para vuelos medianos, tratando de estimar 2006, 2007 y 2008. Para cada año se tomó los dos años anteriores
+Siguiendo el approach anterior, se estimó el porcentaje de demoras para vuelos medianos, tratando de estimar 2006, 2007 y 2008. Para cada año se tomó los dos años anteriores.
 
 %Grafico 3 y 4
 \begin{figure}[!htb]
 \begin{center}
-\includegraphics[scale=0.9,natwidth=732,natheight=300]{distancia3.png}
+\includegraphics[scale=0.5,natwidth=732,natheight=300]{distancia3.png}
 \caption{caption}
-\label{label}
+\label{distancia-3}
 \end{center}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!hbt]
 \begin{center}
-\includegraphics[scale=0.9,natwidth=732,natheight=300]{distancia4.png}
+\includegraphics[scale=0.5,natwidth=732,natheight=300]{distancia4.png}
 \caption{caption}
-\label{label}
+\label{distancia-4}
 \end{center}
 \end{figure}
 
 Los errores cuadráticos medios para estas estimaciones fueron 0.001143 (izquierda), y 0.001758 (derecha). La función utilizada con CML para esta estimación fue:
 
-\bigskip
-
 $f(x) = a + bx + c \times cos(xd + e) + f \times sin(xg + h) + i$
 
 La intuición que se tuvo para encontrar la función fue usar cosenos y senos por la frecuencia y amplitud de los datos.
 
-Este otro experimento consistió en reutilizar los parámetros obtenidos por el método en el tipo de vuelo anterior y tratar de estimar el porcentaje de demoras para vuelos largos.
+El experimento que se grafica en la figura 8 consistió en reutilizar los parámetros obtenidos por el método en el tipo de vuelo anterior y tratar de estimar el porcentaje de demoras para vuelos largos.
 
 %Grafico 5
 \begin{figure}[!htb]
 \begin{center}
-\includegraphics[scale=0.9,natwidth=732,natheight=300]{distancia5.png}
+\includegraphics[scale=0.5,natwidth=732,natheight=300]{distancia5.png}
 \caption{caption}
-\label{label}
+\label{distancia-5}
 \end{center}
 \end{figure}
 
