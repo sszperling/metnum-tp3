@@ -18,6 +18,9 @@ Para realizar los gráficos se acumuló por cada mes de cada año la cantidad de
 
 $y(x) = ax + b|cos(x)| + c|sin(x)| + d \times log(x+1) + e + f \times cos(x) + g \times sin(x) + hx^4 + ix^3 + jx^2$
 
+Para el primer eje nos propusimos observar como varían a través de los años la cantidad de vuelos semanales de varios aeropuertos. Para esto elegimos los aeropuertos con más caudal de vuelos.
+
+
 Uno de los experimentos realizados fue variar los años de entrenamiento y estimar los siguientes años. Se comparó un conjunto entrenado con un año extra que el resto para comprobar si la diferencia en la precisión era sustancial o no. La hipótesis es que al haber entrenado con una mayor cantidad de datos, es posible dar una mejor predicción de los siguientes años, pero podría ser posible que esto no ocurriese así sino que durante ese año extra la disposición de los datos sea muy particular y que se produzca el fenómeno de overfitting, resultando en una predicción de menor calidad.
 
 Estos son los resultados de entrenar a la función entre los años 2003 y 2006, prediciendo de 2006 a 2008.
@@ -25,7 +28,7 @@ Estos son los resultados de entrenar a la función entre los años 2003 y 2006, 
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics[scale=0.5]{vuelosJFK.png}
-\caption{caption}
+\caption{Cantidad de vuelos por mes en el aeropuerto John F. Kennedy}
 \label{vuelos-1}
 \end{center}
 \end{figure}
@@ -37,7 +40,7 @@ Luego se experimentó tomando distintos rangos de entrenamiento: 2003-2005, 2004
 \begin{figure}[!htb]
 \begin{center}
 \includegraphics[scale=0.5]{vuelos_multiples.png}
-\caption{caption}
+\caption{Cantidad de vuelos por mes en el aeropuerto John F. Kennedy. Múltiples predicciones}
 \label{vuelos-2}
 \end{center}
 \end{figure}
